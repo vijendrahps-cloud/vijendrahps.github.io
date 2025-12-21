@@ -1,55 +1,71 @@
-// Smooth scrolling function
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    section.scrollIntoView({ behavior: 'smooth' });
+// Class selection navigation
+function navigateToClass(className) {
+    console.log('Navigating to class:', className);
+    // This can be integrated with your class pages
+    window.location.href = `#${className}`;
 }
 
-// Switch between class tabs
-function switchClass(className) {
-    // Remove active class from all buttons
-    const buttons = document.querySelectorAll('.tab-button');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    
-    // Add active class to clicked button
-    event.target.classList.add('active');
-    
-    // Here you can add logic to filter products by class
-    console.log('Switched to:', className);
+// Smooth scrolling
+function smoothScroll(target) {
+    const element = document.querySelector(target);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
-// Form submission
+// Add hover effects to class buttons
 document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+    const classButtons = document.querySelectorAll('.class-btn');
+    classButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
+            const className = this.getAttribute('href');
+            navigateToClass(className);
         });
+    });
+    
+    // Animate review cards on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    document.querySelectorAll('.review-card, .feature-box').forEach(el => {
+        observer.observe(el);
+    });
+});
+
+// Add animation styles
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Prevent default link behavior for hash navigation
+window.addEventListener('hashchange', function() {
+    const section = document.querySelector(window.location.hash);
+    if (section) {
+        smoothScroll(window.location.hash);
     }
 });
 
-// PDF Generator form
-const generateBtn = document.querySelector('.btn-generate');
-if (generateBtn) {
-    generateBtn.addEventListener('click', function() {
-        alert('PDF generation feature will be integrated with your Gotenberg API.');
-    });
-}
-
-// Add scroll animation on page load
-window.addEventListener('scroll', function() {
-    const elements = document.querySelectorAll('.feature-card, .category-card, .benefit-card');
-    elements.forEach(element => {
-        const rect = element.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-            element.style.animation = 'fadeInUp 0.6s ease-out forwards';
-        }
-    });
-});
-
-// Mobile menu toggle (for future implementation)
-function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-}
+console.log('StudyNotes Pro - CBSE Notes Platform initialized');
