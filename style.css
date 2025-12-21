@@ -343,3 +343,28 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(245, 87, 108, 0.6);
 }
+
+/* Footer Contact Section */
+.footer-contact {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.footer-contact p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.footer-contact a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
