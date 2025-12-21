@@ -298,3 +298,48 @@ body {
     font-size: 1rem;
   }
 }
+
+/* PDF Generation Section */
+.pdf-generation-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.pdf-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pdf-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.pdf-subtitle {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.pdf-generate-btn {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  border: none;
+  padding: 15px 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+}
+
+.pdf-generate-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(245, 87, 108, 0.6);
+}
