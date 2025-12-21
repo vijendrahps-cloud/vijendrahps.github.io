@@ -3,223 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyNotes Pro - CBSE Class 9-12 PDF Notes & Live PDF Generation</title>
+    <title>StudyNotes Pro - CBSE Important Notes & Practise Papers</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Header/Hero Section -->
+    <header class="hero-section">
         <div class="container">
-            <div class="logo">📚 StudyNotes Pro</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#generator">PDF Generator</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <h1 class="main-title">StudyNotes Pro – Important Notes & Practise Papers</h1>
+            <p class="subtitle">(Based On Latest CBSE Syllabus for Session 2025-26)</p>
+            
+            <!-- Class Selection -->
+            <div class="class-selection">
+                <h2 class="section-title">Select Your Class</h2>
+                <div class="class-buttons">
+                    <a href="#class-6" class="class-btn">Class 6</a>
+                    <a href="#class-7" class="class-btn">Class 7</a>
+                    <a href="#class-8" class="class-btn">Class 8</a>
+                    <a href="#class-9" class="class-btn">Class 9</a>
+                    <a href="#class-10" class="class-btn">Class 10</a>
+                    <a href="#class-11" class="class-btn">Class 11</a>
+                    <a href="#class-12" class="class-btn">Class 12</a>
+                </div>
+            </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Reviews Section -->
+    <section class="reviews-section">
         <div class="container">
-            <h1>StudyNotes Pro</h1>
-            <p class="tagline">Premium CBSE Study Materials | Class 9-12 | Complete, Short Notes, Mind Maps & More</p>
-            <div class="hero-buttons">
-                <button class="cta-button primary" onclick="scrollToSection('products')">Explore Products</button>
-                <button class="cta-button secondary" onclick="scrollToSection('generator')">Try PDF Generator</button>
+            <h2 class="section-title">Reviews By Parents & Students</h2>
+            
+            <div class="reviews-slider">
+                <div class="review-card">
+                    <p class="review-text">My son in class 10 likes your notes. He say the one page mind maps help in remembering important concept easily. Thankful to your team sir/madam 🙏</p>
+                    <div class="review-meta">
+                        <span class="review-time">10 weeks ago</span>
+                        <span class="review-reactions">👍😍❤️ 62</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <p class="review-text">Thanks I downloaded very helpful 😊</p>
+                    <div class="review-meta">
+                        <span class="review-time">1 week ago</span>
+                        <span class="review-reactions">👍❤️ 7</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <p class="review-text">Thank you very much I paid and received the notes hope it will be helpful for my son in grade 11</p>
+                    <div class="review-meta">
+                        <span class="review-time">1 week ago</span>
+                        <span class="review-reactions">😊👍❤️ 4</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="products">
+    <!-- Features Section -->
+    <section class="features-section">
         <div class="container">
-            <h2>Our Study Materials</h2>
-            <p class="section-subtitle">Comprehensive CBSE Notes for Classes 9, 10, 11 & 12</p>
+            <h2 class="section-title">Work SMART Not HARD</h2>
             
-            <div class="classes-tabs">
-                <div class="tab-button active" onclick="switchClass('class9')">Class 9</div>
-                <div class="tab-button" onclick="switchClass('class10')">Class 10</div>
-                <div class="tab-button" onclick="switchClass('class11')">Class 11</div>
-                <div class="tab-button" onclick="switchClass('class12')">Class 12</div>
-            </div>
-
-            <div class="notes-category">
-                <div class="category-card">
-                    <div class="category-icon">📖</div>
-                    <h3>Complete Notes</h3>
-                    <p>Comprehensive notes covering all topics with detailed explanations</p>
-                    <div class="price">₹49</div>
-                    <button class="btn-buy">Buy Now</button>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">📚</div>
+                    <h3>Comprehensive Notes</h3>
+                    <p>Complete study materials covering entire CBSE syllabus with simplified explanations</p>
                 </div>
-                
-                <div class="category-card">
-                    <div class="category-icon">⚡</div>
-                    <h3>Short Notes</h3>
-                    <p>Quick reference notes with key points and formulas</p>
-                    <div class="price">₹29</div>
-                    <button class="btn-buy">Buy Now</button>
-                </div>
-                
-                <div class="category-card">
-                    <div class="category-icon">🧠</div>
+                <div class="feature-box">
+                    <div class="feature-icon">🧠</div>
                     <h3>Mind Maps</h3>
-                    <p>Visual mind maps for better conceptual understanding</p>
-                    <div class="price">₹39</div>
-                    <button class="btn-buy">Buy Now</button>
+                    <p>Visual mind maps that help in quick revision and concept understanding</p>
                 </div>
-                
-                <div class="category-card">
-                    <div class="category-icon">📝</div>
-                    <h3>Previous Year Questions</h3>
-                    <p>Last 5-10 years exam questions with answers</p>
-                    <div class="price">₹59</div>
-                    <button class="btn-buy">Buy Now</button>
+                <div class="feature-box">
+                    <div class="feature-icon">📝</div>
+                    <h3>Practice Papers</h3>
+                    <p>Previous years' question papers and practice tests for exam preparation</p>
                 </div>
-                
-                <div class="category-card">
-                    <div class="category-icon">⭐</div>
-                    <h3>Important Questions</h3>
-                    <p>Most likely questions for exams with solutions</p>
-                    <div class="price">₹49</div>
-                    <button class="btn-buy">Buy Now</button>
-                </div>
-                
-                <div class="category-card">
-                    <div class="category-icon">💪</div>
-                    <h3>Practice Questions</h3>
-                    <p>250+ practice questions for self-assessment</p>
-                    <div class="price">₹44</div>
-                    <button class="btn-buy">Buy Now</button>
+                <div class="feature-box">
+                    <div class="feature-icon">✓</div>
+                    <h3>Verified Content</h3>
+                    <p>All notes are prepared by expert educators and verified by subject specialists</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PDF Generator Section -->
-    <section id="generator" class="generator">
+    <!-- Trust Section -->
+    <section class="trust-section">
         <div class="container">
-            <h2>Live PDF Generation</h2>
-            <p class="section-subtitle">Create custom PDFs on demand with your content</p>
-            
-            <div class="generator-content">
-                <div class="generator-features">
-                    <div class="feature-item">
-                        <div class="feature-number">1</div>
-                        <h3>Select Subject & Topics</h3>
-                        <p>Choose from any subject and specific topics you need</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-number">2</div>
-                        <h3>Customize Format</h3>
-                        <p>Add your name, school logo, and custom styling</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-number">3</div>
-                        <h3>Instant Download</h3>
-                        <p>Get your PDF ready in seconds</p>
-                    </div>
+            <h2 class="section-title">Trusted By 30,000+ Parents & Students</h2>
+            <div class="trust-stats">
+                <div class="stat-item">
+                    <div class="stat-number">30,000+</div>
+                    <div class="stat-label">Students & Parents</div>
                 </div>
-                
-                <div class="generator-form">
-                    <div class="form-group">
-                        <label>Select Subject:</label>
-                        <select>
-                            <option>Mathematics</option>
-                            <option>Science</option>
-                            <option>English</option>
-                            <option>Social Studies</option>
-                            <option>Hindi</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Select Topics:</label>
-                        <textarea placeholder="Enter topics separated by commas"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Your Name (Optional):</label>
-                        <input type="text" placeholder="Name">
-                    </div>
-                    <button class="btn-generate">Generate PDF</button>
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Classes (6-12)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">CBSE Aligned</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.9/5</div>
+                    <div class="stat-label">Average Rating</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <h2>Why Choose StudyNotes Pro?</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">✓</div>
-                    <h3>CBSE Aligned</h3>
-                    <p>100% aligned with latest CBSE curriculum and pattern</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">✓</div>
-                    <h3>Expert Created</h3>
-                    <p>Prepared by experienced educators and subject experts</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">✓</div>
-                    <h3>Affordable</h3>
-                    <p>Quality study materials at unbeatable prices</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">✓</div>
-                    <h3>Instant Access</h3>
-                    <p>Get instant access to PDFs after purchase</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">✓</div>
-                    <h3>Multiple Formats</h3>
-                    <p>Complete notes, short notes, mind maps & more</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">✓</div>
-                    <h3>Live Generator</h3>
-                    <p>Create custom PDFs with your content instantly</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About StudyNotes Pro</h2>
-            <p>We are dedicated to making quality education accessible and affordable for every student preparing for CBSE exams. Our comprehensive collection of study materials is designed by experienced educators to help students excel in their academic journey.</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <form id="contactForm">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="cta-button primary">Send Message</button>
-            </form>
+            <h2>Get Instant Access to All Notes</h2>
+            <p>Download comprehensive study materials for your class now</p>
+            <a href="#class-selection" class="cta-button">Explore Now</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>© 2025 StudyNotes Pro. All rights reserved.</p>
-            <p>Crafted with 📚 for CBSE Students</p>
+            <p>&copy; 2025 StudyNotes Pro. All rights reserved.</p>
+            <p>Created with ❤️ for CBSE Students</p>
             <div class="footer-links">
-                <a href="/pricing.html">Pricing</a> |
-                <a href="/terms.html">Terms & Conditions</a> |
-                <a href="/privacy.html">Privacy Policy</a> |
-                <a href="/refunds.html">Refund Policy</a> |
-                <a href="/contact.html">Contact Us</a>
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms & Conditions</a> |
+                <a href="#">Contact Us</a>
             </div>
         </div>
     </footer>
