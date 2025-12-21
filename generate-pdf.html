@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate PDF - Heritage Public School</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        select, input[type="email"], input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        select:focus, input[type="email"]:focus, input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-submit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-reset {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .btn-reset:hover {
+            background: #e0e0e0;
+        }
+        
+        .info-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generate PDF</h1>
+        <p class="subtitle">Heritage Public School - Study Materials</p>
+        
+        <div class="info-box">
+            📝 Fill in the details below to generate your custom PDF and we'll send it to your email.
+        </div>
+        
+        <form action="https://n8n.automessage.cloud/webhook/pdf-request" method="POST">
+            <input type="hidden" name="institute" value="Heritage Public School">
+            
+            <div class="form-group">
+                <label for="exam_type">Exam Type *</label>
+                <select name="exam_type" id="exam_type" required>
+                    <option value="">-- Select Exam Type --</option>
+                    <option value="Pre-Board">Pre-Board</option>
+                    <option value="Unit Test">Unit Test</option>
+                    <option value="Mid Term">Mid Term</option>
+                    <option value="Final Exam">Final Exam</option>
+                    <option value="Practice Test">Practice Test</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="class">Class *</label>
+                <select name="class" id="class" required>
+                    <option value="">-- Select Class --</option>
+                    <option value="9">Class 9</option>
+                    <option value="10">Class 10</option>
+                    <option value="11">Class 11</option>
+                    <option value="12">Class 12</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="subject">Subject *</label>
+                <select name="subject" id="subject" required>
+                    <option value="">-- Select Subject --</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="English">English</option>
+                    <option value="History">History</option>
+                    <option value="Geography">Geography</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="session">Session *</label>
+                <input type="text" name="session" id="session" value="2025-26" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" name="email" id="email" placeholder="your.email@example.com" required>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" class="btn-submit">Generate & Send PDF</button>
+                <button type="reset" class="btn-reset">Clear</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
