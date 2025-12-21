@@ -188,18 +188,6 @@
         
         </form>
     </div>
-      <script>
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function(e) {
-      const institute = document.querySelector('input[name="institute"]').value;
-      const examType = document.querySelector('select[name="exam_type"]').value;
-      const classValue = document.querySelector('select[name="class"]').value;
-      const subject = document.querySelector('select[name="subject"]').value;
-      const session = document.querySelector('input[name="session"]').value;
-      
-      const message = `Generate a pdf: Institute Name- ${institute}, Exam Type- ${examType}, Class- ${classValue}, Subject- ${subject}, Session- ${session}`;
-      document.getElementById('messageField').value = message;
-    });
-  </script>
+     
 </body>
 </html>
