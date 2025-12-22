@@ -69,11 +69,3 @@ window.addEventListener('hashchange', function() {
 });
 
 console.log('StudyNotes Pro - CBSE Notes Platform initialized');
-
-// PDF Generate button handler
-const pdfGenerateBtn = document.querySelector('.pdf-generate-btn');
-if (pdfGenerateBtn) {
-  pdfGenerateBtn.addEventListener('click', function() {
-    window.location.href = 'generate-pdf.html';
-  });
-}
