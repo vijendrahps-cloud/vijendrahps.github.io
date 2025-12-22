@@ -129,7 +129,7 @@
         <h1>Create Your Custom Question Paper</h1>
         <p class="subtitle">Fill in the details below to generate a customized question paper</p>
         
-        <form id="customQuestionForm">
+        <form id="customQuestionForm" action="https://n8n.automessage.cloud/webhook/pdf-request" method="POST">
             <!-- Institute Name -->
             <div class="form-group">
                 <label for="instituteName">
@@ -232,6 +232,11 @@
                     name="multipleSubjects"
                     placeholder="List multiple subjects separated by comma (e.g., Physics, Chemistry, Biology)"
                 ></textarea>
+            </div>
+
+            <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" name="email" id="email" placeholder="your.email@example.com" required>
             </div>
             
             <button type="submit">Generate PDF</button>
