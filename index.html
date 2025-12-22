@@ -1,317 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyNotes Pro - CBSE Important Notes & Practise Papers</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-   .pdf-tabs {
-     display: flex;
-     gap: 10px;
-     margin-bottom: 20px;
-     flex-wrap: wrap;
-   }
-   
-   .pdf-tab-btn {
-     padding: 10px 20px;
-     background-color: #e0e0e0;
-     border: none;
-     border-radius: 5px;
-     cursor: pointer;
-     font-size: 14px;
-     font-weight: 600;
-     transition: all 0.3s ease;
-   }
-   
-   .pdf-tab-btn:hover {
-     background-color: #d0d0d0;
-   }
-   
-   .pdf-tab-btn.active {
-     background-color: #6366f1;
-     color: white;
-   }
-   
-   .pdf-content {
-     display: none;
-   }
-   
-   .pdf-content.active {
-     display: block;
-   }
-   
-   .custom-qp-form {
-     max-width: 500px;
-     margin: 20px 0;
-   }
-   
-   .form-group {
-     margin-bottom: 15px;
-     display: flex;
-     flex-direction: column;
-   }
-   
-   .form-group label {
-     font-weight: 600;
-     margin-bottom: 5px;
-     color: #333;
-   }
-   
-   .form-group input,
-   .form-group select,
-   .form-group textarea {
-     padding: 10px;
-     border: 1px solid #ddd;
-     border-radius: 4px;
-     font-size: 14px;
-     font-family: inherit;
-   }
-   
-   .form-group input:focus,
-   .form-group select:focus,
-   .form-group textarea:focus {
-     outline: none;
-     border-color: #6366f1;
-     box-shadow: 0 0 5px rgba(99, 102, 241, 0.3);
-   }
-   
-   .form-group textarea {
-     resize: vertical;
-     min-height: 80px;
-   }
-   
-   @media (max-width: 768px) {
-     .pdf-tabs {
-       gap: 5px;
-     }
-     
-     .pdf-tab-btn {
-       padding: 8px 15px;
-       font-size: 12px;
-     }
-     
-     .custom-qp-form {
-       max-width: 100%;
-     }
-   }
- </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyNotes Pro - CBSE Important Notes & Practise Papers</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .pdf-cards-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .pdf-card {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pdf-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .pdf-card h3 {
+      color: #333;
+      margin: 0 0 10px 0;
+      font-size: 20px;
+    }
+
+    .pdf-card p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .pdf-generate-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .pdf-generate-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .custom-qp-form {
+      display: none;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    .custom-qp-form.show {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    @media (max-width: 768px) {
+      .pdf-cards-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header/Hero Section -->
-    <header class="hero-section">
-        <div class="container">
-            <h1 class="main-title">StudyNotes Pro – Important Notes & Practise Papers</h1>
-            <p class="subtitle">(Based On Latest CBSE Syllabus for Session 2025-26)</p>
-            
-            <!-- Class Selection -->
-            <div class="class-selection">
-                <h2 class="section-title">Select Your Class</h2>
-                <div class="class-buttons">
-                    <a href="#class-6" class="class-btn">Class 6</a>
-                    <a href="#class-7" class="class-btn">Class 7</a>
-                    <a href="#class-8" class="class-btn">Class 8</a>
-                    <a href="#class-9" class="class-btn">Class 9</a>
-                    <a href="#class-10" class="class-btn">Class 10</a>
-                    <a href="#class-11" class="class-btn">Class 11</a>
-                    <a href="#class-12" class="class-btn">Class 12</a>
-                </div>
-            </div>
+  <!-- Header/Hero Section -->
+  <header class="hero-section">
+    <div class="container">
+      <h1 class="main-title">StudyNotes Pro – Important Notes & Practise Papers</h1>
+      <p class="subtitle">(Based On Latest CBSE Syllabus for Session 2025-26)</p>
+
+      <!-- Class Selection -->
+      <div class="class-selection">
+        <h2 class="section-title">Select Your Class</h2>
+        <div class="class-buttons">
+          <a href="#class-6" class="class-btn">Class 6</a>
+          <a href="#class-7" class="class-btn">Class 7</a>
+          <a href="#class-8" class="class-btn">Class 8</a>
+          <a href="#class-9" class="class-btn">Class 9</a>
+          <a href="#class-10" class="class-btn">Class 10</a>
+          <a href="#class-11" class="class-btn">Class 11</a>
+          <a href="#class-12" class="class-btn">Class 12</a>
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
 
-     <!-- Live PDF Generation Section -->
- <section class="pdf-generation-section">
-  <div class="container">
-<div class="pdf-wrapper">
-     <h2 class="pdf-title"><b>Live PDF Generation</b></h2>
-     <div class="pdf-tabs">
-       <button class="pdf-tab-btn active" data-tab="cbse">CBSE Latest Pattern</button>
-       <button class="pdf-tab-btn" data-tab="custom">Custom Question Paper</button>
-     </div>
-     
-     <!-- CBSE Latest Pattern Content -->
-     <div id="cbse" class="pdf-content active">
-       <p class="pdf-subtitle">CBSE Latest Pattern Question Paper</p>
-       <button class="pdf-generate-btn" onclick="generateCBSEForm()">Generate Now</button>
-     </div>
-     
-     <!-- Custom Question Paper Content -->
-     <div id="custom" class="pdf-content">
-       <p class="pdf-subtitle">Create Your Custom Question Paper</p>
-       <form id="customQPForm" class="custom-qp-form">
-         <div class="form-group">
-           <label for="instituteName">Institute Name:</label>
-           <input type="text" id="instituteName" name="instituteName" required>
-         </div>
-         <div class="form-group">
-           <label for="examType">Exam Type:</label>
-           <input type="text" id="examType" name="examType" required>
-         </div>
-         <div class="form-group">
-           <label for="class">Class:</label>
-           <select id="class" name="class" required>
-             <option value="">Select Class</option>
-             <option value="1">Class 1</option>
-             <option value="2">Class 2</option>
-             <option value="3">Class 3</option>
-             <option value="4">Class 4</option>
-             <option value="5">Class 5</option>
-             <option value="6">Class 6</option>
-             <option value="7">Class 7</option>
-             <option value="8">Class 8</option>
-             <option value="9">Class 9</option>
-             <option value="10">Class 10</option>
-             <option value="11">Class 11</option>
-             <option value="12">Class 12</option>
-           </select>
-         </div>
-         <div class="form-group">
-           <label for="subject">Subject:</label>
-           <input type="text" id="subject" name="subject" required>
-         </div>
-         <div class="form-group">
-           <label for="topic">Topic (optional):</label>
-           <input type="text" id="topic" name="topic">
-         </div>
-         <div class="form-group">
-           <label for="session">Session (optional):</label>
-           <input type="text" id="session" name="session">
-         </div>
-         <div class="form-group">
-           <label for="multipleSubjects">Multiple Subjects (optional):</label>
-           <textarea id="multipleSubjects" name="multipleSubjects" rows="4"></textarea>
-         </div>
-         <button type="submit" class="pdf-generate-btn">Generate Now</button>
-       </form>
-     </div>
-   </div>
-  </div>
- </section>
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="container">
-            <h2 class="section-title">Work SMART Not HARD</h2>
-            
-            <div class="features-grid">
-                <div class="feature-box">
-                    <div class="feature-icon">📚</div>
-                    <h3>Comprehensive Notes</h3>
-                    <p>Complete study materials covering entire CBSE syllabus with simplified explanations</p>
-                </div>
-                <div class="feature-box">
-                    <div class="feature-icon">🧠</div>
-                    <h3>Mind Maps</h3>
-                    <p>Visual mind maps that help in quick revision and concept understanding</p>
-                </div>
-                <div class="feature-box">
-                    <div class="feature-icon">📝</div>
-                    <h3>Practice Papers</h3>
-                    <p>Previous years' question papers and practice tests for exam preparation</p>
-                </div>
-                <div class="feature-box">
-                    <div class="feature-icon">✓</div>
-                    <h3>Verified Content</h3>
-                    <p>All notes are prepared by expert educators and verified by subject specialists</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Get Instant Access to All Notes</h2>
-            <p>Download comprehensive study materials for your class now</p>
-            <a href="#class-selection" class="cta-button">Explore Now</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 StudyNotes Pro. All rights reserved.</p>
-            <p>Created with ❤️ for CBSE Students</p>
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a> |
-                <a href="terms.html">Terms & Conditions</a> |
-                <a href="contact.html">Contact Us</a> |
-                <a href="refunds.html">Refund Policy</a> |
-            </div>
-
-             <div class="footer-contact">
-   <p><strong>Mobile:</strong> <a href="tel:+919931611596">+91 9931611596, +91 9661232061</a></p>
-   <p><strong>Email:</strong> <a href="mailto:vijendra.hps@gmail.com">vijendra.hps@gmail.com</a></p>
- </div>
-
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script>
-  // Tab switching functionality
-  document.querySelectorAll('.pdf-tab-btn').forEach(button => {
-    button.addEventListener('click', function() {
-      const tabName = this.getAttribute('data-tab');
+  <!-- Live PDF Generation Section -->
+  <section class="pdf-generation-section">
+    <div class="container">
+      <h2 class="pdf-title"><b>Live PDF Generation</b></h2>
       
-      // Hide all content tabs
-      document.querySelectorAll('.pdf-content').forEach(content => {
-        content.classList.remove('active');
-      });
-      
-      // Remove active class from all buttons
-      document.querySelectorAll('.pdf-tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      
-      // Show selected content and mark button as active
-      document.getElementById(tabName).classList.add('active');
-      this.classList.add('active');
-    });
-  });
-  
-  // CBSE Form function (placeholder - integrate with your backend)
-  function generateCBSEForm() {
-    alert('CBSE Form - This will redirect to your PDF generation service');
-    // TODO: Add your n8n webhook or backend integration here
-  }
-  
-  // Custom Question Paper Form submission
-  document.getElementById('customQPForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Collect form data
-    const formData = {
-      instituteName: document.getElementById('instituteName').value,
-      examType: document.getElementById('examType').value,
-      class: document.getElementById('class').value,
-      subject: document.getElementById('subject').value,
-      topic: document.getElementById('topic').value || '',
-      session: document.getElementById('session').value || '',
-      multipleSubjects: document.getElementById('multipleSubjects').value || ''
-    };
-    
-    // Validate required fields
-    if (!formData.instituteName || !formData.examType || !formData.class || !formData.subject) {
-      alert('Please fill in all required fields!');
-      return;
+      <div class="pdf-cards-container">
+        <!-- CBSE Card -->
+        <div class="pdf-card">
+          <h3>CBSE Latest Pattern</h3>
+          <p>Generate question papers based on the latest CBSE pattern</p>
+          <button class="pdf-generate-btn" onclick="generateCBSEForm()">Generate Now</button>
+        </div>
+
+        <!-- Custom Question Paper Card -->
+        <div class="pdf-card">
+          <h3>Custom Question Paper</h3>
+          <p>Create your own customized question paper</p>
+          <button class="pdf-generate-btn" onclick="toggleCustomForm()">Generate Now</button>
+        </div>
+      </div>
+
+      <!-- Custom Question Paper Form -->
+      <form id="customQPForm" class="custom-qp-form">
+        <h3 style="text-align: left; margin-top: 0;">Create Your Custom Question Paper</h3>
+        
+        <div class="form-group">
+          <label for="instituteName">Institute Name:</label>
+          <input type="text" id="instituteName" name="instituteName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="examType">Exam Type:</label>
+          <input type="text" id="examType" name="examType" required>
+        </div>
+
+        <div class="form-group">
+          <label for="class">Class:</label>
+          <select id="class" name="class" required>
+            <option value="">Select Class</option>
+            <option value="1">Class 1</option>
+            <option value="2">Class 2</option>
+            <option value="3">Class 3</option>
+            <option value="4">Class 4</option>
+            <option value="5">Class 5</option>
+            <option value="6">Class 6</option>
+            <option value="7">Class 7</option>
+            <option value="8">Class 8</option>
+            <option value="9">Class 9</option>
+            <option value="10">Class 10</option>
+            <option value="11">Class 11</option>
+            <option value="12">Class 12</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+
+        <div class="form-group">
+          <label for="topic">Topic (optional):</label>
+          <input type="text" id="topic" name="topic">
+        </div>
+
+        <div class="form-group">
+          <label for="session">Session (optional):</label>
+          <input type="text" id="session" name="session">
+        </div>
+
+        <div class="form-group">
+          <label for="multipleSubjects">Multiple Subjects (optional):</label>
+          <textarea id="multipleSubjects" name="multipleSubjects"></textarea>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="pdf-generate-btn">Generate Now</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title">Work SMART Not HARD</h2>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon">📚</div>
+          <h3>Comprehensive Notes</h3>
+          <p>Complete study materials covering entire CBSE syllabus with simplified explanations</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon">🧠</div>
+          <h3>Mind Maps</h3>
+          <p>Visual mind maps that help in quick revision and concept understanding</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon">📝</div>
+          <h3>Practice Papers</h3>
+          <p>Previous years' question papers and practice tests for exam preparation</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon">✓</div>
+          <h3>Verified Content</h3>
+          <p>All notes are prepared by expert educators and verified by subject specialists</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Get Instant Access to All Notes</h2>
+      <p>Download comprehensive study materials for your class now</p>
+      <a href="#class-selection" class="cta-button">Explore Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 StudyNotes Pro. All rights reserved.</p>
+      <p>Created with ❤️ for CBSE Students</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms & Conditions</a> |
+        <a href="contact.html">Contact Us</a> |
+        <a href="refunds.html">Refund Policy</a> |
+      </div>
+      <div class="footer-contact">
+        <p><strong>Mobile:</strong> <a href="tel:+919931611596">+91 9931611596, +91 9661232061</a></p>
+        <p><strong>Email:</strong> <a href="mailto:vijendra.hps@gmail.com">vijendra.hps@gmail.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Toggle custom form visibility
+    function toggleCustomForm() {
+      const form = document.getElementById('customQPForm');
+      form.classList.toggle('show');
+      if (form.classList.contains('show')) {
+        form.scrollIntoView({ behavior: 'smooth' });
+      }
     }
-    
-    // Log data (for debugging)
-    console.log('Form Data:', formData);
-    
-    // TODO: Send data to your backend/n8n webhook
-    // Example:
-    // fetch('YOUR_WEBHOOK_URL', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(formData)
-    // }).then(response => response.json())
-    //   .then(data => { alert('Form submitted successfully!'); })
-    //   .catch(error => { alert('Error:', error.message); });
-    
-    alert('Custom Question Paper form submitted! Institute: ' + formData.instituteName + ', Subject: ' + formData.subject);
-  });
-</script>
+
+    // CBSE Form function (placeholder)
+    function generateCBSEForm() {
+      alert('CBSE Form - This will redirect to your PDF generation service');
+      // TODO: Add your n8n webhook or backend integration here
+    }
+
+    // Custom Question Paper Form submission
+    document.getElementById('customQPForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Collect form data
+      const formData = {
+        instituteName: document.getElementById('instituteName').value,
+        examType: document.getElementById('examType').value,
+        class: document.getElementById('class').value,
+        subject: document.getElementById('subject').value,
+        topic: document.getElementById('topic').value || '',
+        session: document.getElementById('session').value || '',
+        multipleSubjects: document.getElementById('multipleSubjects').value || ''
+      };
+
+      // Validate required fields
+      if (!formData.instituteName || !formData.examType || !formData.class || !formData.subject) {
+        alert('Please fill in all required fields!');
+        return;
+      }
+
+      // Log data (for debugging)
+      console.log('Form Data:', formData);
+
+      // TODO: Send data to your backend/n8n webhook
+      // Example:
+      // fetch('YOUR_WEBHOOK_URL', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(formData)
+      // }).then(response => response.json())
+      //   .then(data => { alert('Form submitted successfully!'); })
+      //   .catch(error => { alert('Error:', error.message); });
+
+      alert('Custom Question Paper form submitted! Institute: ' + formData.instituteName + ', Subject: ' + formData.subject);
+    });
+  </script>
 </body>
 </html>
