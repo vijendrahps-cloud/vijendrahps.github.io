@@ -135,8 +135,21 @@
           <a href="#class-8" class="class-btn">Class 8</a>
           <a href="#class-9" class="class-btn">Class 9</a>
           <a href="#class-10" class="class-btn">Class 10</a>
-          <a href="#class-11" class="class-btn">Class 11</a>
-                  <div style="position: relative; display: inline-block;">
+<div style="position: relative; display: inline-block;">
+                  <a href="#class-11" class="class-btn" onclick="showClass11Subjects(event)">Class 11</a>                  <div style="position: relative; display: inline-block;">
+                                      <div id="class11-subject-dropdown" class="subject-dropdown" style="display: none; position: absolute; top: 50px; right: 0; z-index: 1000; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); min-width: 200px;">
+                    <label for="class11-subjects" style="display: block; font-weight: 600; margin-bottom: 10px; color: #333;">Select Subject for Class 11:</label>
+                    <select id="class11-subjects" class="subject-select" style="width: 100%; max-width: 300px; padding: 12px; border: 2px solid #667eea; border-radius: 8px; font-size: 16px; background-color: white; cursor: pointer; font-weight: 500; transition: all 0.3s ease;" onchange="handleClass11Subject()">
+                      <option value="">Choose a Subject...</option>
+                      <option value="physics">Physics</option>
+                      <option value="chemistry">Chemistry</option>
+                      <option value="mathematics">Mathematics</option>
+                      <option value="english">English</option>
+                      <option value="pe">Physical Education</option>
+                      <option value="commerce">Commerce</option>
+                    </select>
+                  </div>
+                                    </div>
                   <a href="#class-12" class="class-btn" onclick="showClass12Subjects(event)">Class 12</a>                          <!-- Subject Dropdown (Hidden by default) -->
                 <div id="class12-subject-dropdown" class="subject-dropdown" style="display: none; position: absolute; top: 50px; right: 0; z-index: 1000; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); min-width: 200px;">
                   <label for="class12-subjects" style="display: block; font-weight: 600; margin-bottom: 10px; color: #333;">Select Subject for Class 12:</label>
@@ -332,6 +345,28 @@
     
     if (selectedSubject) {
       console.log('Selected Class 12 Subject:', selectedSubject);
+      // You can add further actions here, like redirecting to a specific page
+      // or showing additional content based on the selected subject
+    }
+  }
+
+    // 4. Class 11 Subject Dropdown
+  function showClass11Subjects(event) {
+    event.preventDefault();
+    const dropdown = document.getElementById('class11-subject-dropdown');
+    if (dropdown) {
+      // Toggle display or show it
+      dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+    }
+  }
+
+  // Handle Class 11 subject selection
+  function handleClass11Subject() {
+    const select = document.getElementById('class11-subjects');
+    const selectedSubject = select.value;
+    
+    if (selectedSubject) {
+      console.log('Selected Class 11 Subject:', selectedSubject);
       // You can add further actions here, like redirecting to a specific page
       // or showing additional content based on the selected subject
     }
