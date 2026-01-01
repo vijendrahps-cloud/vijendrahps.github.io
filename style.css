@@ -78,7 +78,7 @@
   border-radius: 0 0 8px 8px;
 }
 
-.nav-dropdown:hover .dropdown-menu {
+.nav-dropdown-parent:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
