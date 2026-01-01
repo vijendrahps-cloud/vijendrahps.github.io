@@ -136,7 +136,19 @@
           <a href="#class-9" class="class-btn">Class 9</a>
           <a href="#class-10" class="class-btn">Class 10</a>
           <a href="#class-11" class="class-btn">Class 11</a>
-          <a href="#class-12" class="class-btn">Class 12</a>
+                  <a href="#class-12" class="class-btn" onclick="showClass12Subjects(event)">Class 12</a>                          <!-- Subject Dropdown (Hidden by default) -->
+                <div id="class12-subject-dropdown" class="subject-dropdown" style="display: none; margin-top: 20px;">
+                  <label for="class12-subjects" style="display: block; font-weight: 600; margin-bottom: 10px; color: #333;">Select Subject for Class 12:</label>
+                  <select id="class12-subjects" class="subject-select" style="width: 100%; max-width: 300px; padding: 12px; border: 2px solid #667eea; border-radius: 8px; font-size: 16px; background-color: white; cursor: pointer; font-weight: 500; transition: all 0.3s ease;" onchange="handleClass12Subject()">
+                    <option value="">Choose a Subject...</option>
+                    <option value="physics">Physics</option>
+                    <option value="chemistry">Chemistry</option>
+                    <option value="mathematics">Mathematics</option>
+                    <option value="english">English</option>
+                    <option value="pe">Physical Education</option>
+                    <option value="commerce">Commerce</option>
+                  </select>
+                </div>
         </div>
       </div>
     </div>
@@ -300,6 +312,28 @@
         // Redirect to the Custom Question Paper form page
         window.location.href = 'generate-custom-pdf.html';
     }
+  
+  // 3. Class 12 Subject Dropdown
+  function showClass12Subjects(event) {
+    event.preventDefault();
+    const dropdown = document.getElementById('class12-subject-dropdown');
+    if (dropdown) {
+      // Toggle display or show it
+      dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+    }
+  }
+
+  // Handle Class 12 subject selection
+  function handleClass12Subject() {
+    const select = document.getElementById('class12-subjects');
+    const selectedSubject = select.value;
+    
+    if (selectedSubject) {
+      console.log('Selected Class 12 Subject:', selectedSubject);
+      // You can add further actions here, like redirecting to a specific page
+      // or showing additional content based on the selected subject
+    }
+  }
 </script>
       
 </body>
