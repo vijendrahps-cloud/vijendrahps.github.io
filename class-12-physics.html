@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 12 Physics - StudyNotes Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .class-content {
+      text-align: center;
+      padding: 60px 20px;
+      min-height: calc(100vh - 300px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .class-title {
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: #3d3bb5;
+      margin-bottom: 60px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .buttons-container {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .content-button {
+      position: relative;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 20px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      min-width: 200px;
+    }
+    .content-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border: 2px solid #667eea;
+      border-radius: 8px;
+      min-width: 250px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      margin-top: 10px;
+      padding: 0;
+      list-style: none;
+    }
+    .content-button:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown-content li {
+      padding: 12px 20px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      color: #333;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .dropdown-content li:last-child {
+      border-bottom: none;
+    }
+    .dropdown-content li:hover {
+      background-color: #f0f0ff;
+      padding-left: 30px;
+    }
+    @media (max-width: 768px) {
+      .class-title {
+        font-size: 2.5rem;
+      }
+      .buttons-container {
+        gap: 20px;
+        flex-direction: column;
+      }
+      .content-button {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">StudyNotes Pro</a>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item nav-dropdown-parent">
+          <a href="index.html#class-9" class="nav-link">Class 9</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#class-9-mathematics" class="dropdown-item">Class 9 Mathematics</a></li>
+            <li><a href="index.html#class-9-science" class="dropdown-item">Class 9 Science</a></li>
+            <li><a href="index.html#class-9-english" class="dropdown-item">Class 9 English</a></li>
+          </ul>
+        </li>
+        <li class="nav-item nav-dropdown-parent">
+          <a href="index.html#class-10" class="nav-link">Class 10</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#class-10-mathematics" class="dropdown-item">Class 10 Mathematics</a></li>
+            <li><a href="index.html#class-10-science" class="dropdown-item">Class 10 Science</a></li>
+            <li><a href="index.html#class-10-english" class="dropdown-item">Class 10 English</a></li>
+          </ul>
+        </li>
+        <li class="nav-item nav-dropdown-parent">
+          <a href="index.html#class-11" class="nav-link">Class 11</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html#class-11-mathematics" class="dropdown-item">Class 11 Mathematics</a></li>
+            <li><a href="index.html#class-11-physics" class="dropdown-item">Class 11 Physics</a></li>
+            <li><a href="index.html#class-11-chemistry" class="dropdown-item">Class 11 Chemistry</a></li>
+            <li><a href="index.html#class-11-english" class="dropdown-item">Class 11 English</a></li>
+            <li><a href="index.html#class-11-pe" class="dropdown-item">Class 11 Physical Education</a></li>
+            <li><a href="index.html#class-11-commerce" class="dropdown-item">Class 11 Commerce</a></li>
+          </ul>
+        </li>
+        <li class="nav-item nav-dropdown-parent">
+          <a href="index.html#class-12" class="nav-link">Class 12</a>
+          <ul class="dropdown-menu">
+            <li><a href="class-12-physics.html" class="dropdown-item">Class 12 Physics</a></li>
+            <li><a href="index.html#class-12-mathematics" class="dropdown-item">Class 12 Mathematics</a></li>
+            <li><a href="index.html#class-12-chemistry" class="dropdown-item">Class 12 Chemistry</a></li>
+            <li><a href="index.html#class-12-english" class="dropdown-item">Class 12 English</a></li>
+            <li><a href="index.html#class-12-pe" class="dropdown-item">Class 12 Physical Education</a></li>
+            <li><a href="index.html#class-12-commerce" class="dropdown-item">Class 12 Commerce</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="index.html#about" class="nav-link">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Main Content -->
+  <div class="class-content">
+    <h1 class="class-title">Class 12 Physics</h1>
+    <div class="buttons-container">
+      <button class="content-button">
+        Study Notes
+        <ul class="dropdown-content">
+          <li>Coulomb's Law</li>
+          <li>Electric Field</li>
+          <li>Capacitor</li>
+          <li>Current and Circuits</li>
+          <li>Magnetic Fields</li>
+          <li>Electromagnetic Induction</li>
+        </ul>
+      </button>
+      <button class="content-button">
+        Revision Notes
+        <ul class="dropdown-content">
+          <li>Coulomb's Law</li>
+          <li>Electric Field</li>
+          <li>Capacitor</li>
+          <li>Current and Circuits</li>
+          <li>Magnetic Fields</li>
+          <li>Electromagnetic Induction</li>
+        </ul>
+      </button>
+      <button class="content-button">
+        Mind Map
+        <ul class="dropdown-content">
+          <li>Coulomb's Law</li>
+          <li>Electric Field</li>
+          <li>Capacitor</li>
+          <li>Current and Circuits</li>
+          <li>Magnetic Fields</li>
+          <li>Electromagnetic Induction</li>
+        </ul>
+      </button>
+      <button class="content-button">
+        Practice Problem
+        <ul class="dropdown-content">
+          <li>Practice Problem 1 on Coulomb's Law</li>
+          <li>Practice Problem 2 on Coulomb's Law</li>
+          <li>Practice Problem 1 on Electric Field</li>
+          <li>Practice Problem 2 on Electric Field</li>
+          <li>Practice Problem 1 on Capacitor</li>
+          <li>Practice Problem 2 on Capacitor</li>
+        </ul>
+      </button>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 StudyNotes Pro. All rights reserved.</p>
+    <p>Created with ❤️ for CBSE Students</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a> | 
+      <a href="terms.html">Terms & Conditions</a> | 
+      <a href="contact.html">Contact Us</a> | 
+      <a href="refunds.html">Refund Policy</a>
+    </div>
+    <p><strong>Mobile:</strong> <a href="tel:+919931611596">+91 9931611596</a></p>
+    <p><strong>Email:</strong> <a href="mailto:vijendra.hps@gmail.com">vijendra.hps@gmail.com</a></p>
+  </footer>
+</body>
+</html>
